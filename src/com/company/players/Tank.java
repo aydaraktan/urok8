@@ -1,6 +1,6 @@
 package com.company.players;
 
-public class Tank extends Hero{
+public class Tank extends Hero {
 
 
     public Tank(int health, int damage) {
@@ -9,6 +9,8 @@ public class Tank extends Hero{
 
     @Override
     public void applySuperAbility(Boss boss, Hero[] heroes) {
-
+        if (this.getHealth() > 0 && boss.getHealth() > 0) {
+            boss.setHealth(boss.getHealth() -  boss.getDamage());
+        }
     }
 }

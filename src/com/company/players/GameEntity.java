@@ -4,7 +4,7 @@ public abstract class GameEntity {
     private int health;
     private int damage;
 
-    public GameEntity(int health, int damage){
+    public GameEntity(int health, int damage) {
         this.health = health;
         this.damage = damage;
     }
@@ -14,6 +14,9 @@ public abstract class GameEntity {
     }
 
     public void setHealth(int health) {
+        if (health < 0) {
+            this.health = 0;
+        } else
         this.health = health;
     }
 
